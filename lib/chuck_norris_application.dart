@@ -3,7 +3,17 @@ import 'package:tutorial_app/screens/categories/categories_screen.dart';
 import 'package:tutorial_app/screens/jokes/jokes_screen.dart';
 
 class ChuckNorrisApplication extends StatelessWidget {
-  const ChuckNorrisApplication({Key? key}) : super(key: key);
+  // visibleForTesting means this can only be accessed in a test file, since
+  // it's just here to facilitate testing. home is only used so that we can
+  // properly draw goldens with the theme of our Application file, see
+  // [golden_test_utils.dart].
+  @visibleForTesting
+  final Widget? home;
+
+  const ChuckNorrisApplication({
+    Key? key,
+    @visibleForTesting this.home,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +36,7 @@ class ChuckNorrisApplication extends StatelessWidget {
       },
       // The first screen our app will launch to.
       initialRoute: '/categories',
+      home: home,
     );
   }
 }
