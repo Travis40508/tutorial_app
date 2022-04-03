@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tutorial_app/screens/categories/categories_cubit.dart';
 import 'package:tutorial_app/screens/categories/categories_state.dart';
+import 'package:tutorial_app/widgets/error_widget.dart';
+import 'package:tutorial_app/widgets/loading_widget.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({
@@ -53,37 +55,14 @@ class CategoriesScreen extends StatelessWidget {
               ),
             );
           } else if (state is CategoriesLoadingState) {
-            return Material(
-              color: theme.backgroundColor,
-              child: Center(
-                child: CircularProgressIndicator(
-                  color: theme.primaryColor,
-                ),
-              ),
-            );
+            return const LoadingWidget();
           } else {
-            return Material(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Something went wrong. \nPlease try again.',
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(
-                    height: 16.0,
-                  ),
-                  ElevatedButton(
-                    // context.read is just a way for Flutter to look up the
-                    // widget tree, to find the cubit we're talking about.
-                    onPressed: context.read<CategoriesCubit>().onTryAgain,
-                    child: Text(
-                      'Try again',
-                      style: theme.textTheme.headline5,
-                    ),
-                  ),
-                ],
-              ),
+            return ErrorLoadingWidget(
+              // context.read is just a way for Flutter to look up the
+              // widget tree, to find the cubit we're talking about.
+              onPressed: context.read<CategoriesCubit>().onTryAgain,
+              errorMessage: 'Something went wrong. \nPlease try again.',
+              buttonText: 'Try again',
             );
           }
         },
