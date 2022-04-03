@@ -10,9 +10,8 @@ class JokesRepositoryImpl implements JokesRepository {
   });
 
   @override
-  Future<List<String>> fetchCategories() {
-    // TODO: implement fetchCategories
-    throw UnimplementedError();
+  Future<List<String>> fetchCategories() async {
+    return await jokesService.fetchCategories();
   }
 
   @override

@@ -3,11 +3,11 @@
 // to create an object that has both an image for our joke, and the joke-itself.
 
 class Joke {
-  final String joke;
+  final String jokeDescription;
   final String jokeImage;
 
   const Joke({
-    required this.joke,
+    required this.jokeDescription,
     required this.jokeImage,
   });
 }

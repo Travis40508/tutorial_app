@@ -24,7 +24,7 @@ class CategoriesScreen extends StatelessWidget {
               appBar: AppBar(
                 backgroundColor: theme.primaryColor,
                 title: Text(
-                  'Categories',
+                  'Joke Categories',
                   style: theme.textTheme.headline4,
                 ),
               ),
