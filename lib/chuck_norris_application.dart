@@ -19,9 +19,13 @@ class ChuckNorrisApplication extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primaryColor: Colors.green,
+        primarySwatch: Colors.green,
         backgroundColor: Colors.white,
         textTheme: const TextTheme(
           headline4: TextStyle(
+            color: Colors.white,
+          ),
+          headline5: TextStyle(
             color: Colors.white,
           ),
         ),
