@@ -14,6 +14,10 @@ void main() {
   runApp(const ChuckNorrisApplication());
 }
 
+/// Challenge C - Create your own dependency injection graph, and inject the
+/// objects you've provided here in various locations of an app and see how
+/// they can be used.
+
 // This builds all of our objects at launch so we can just use them in the
 // application. A dependency is just what it sounds like, anything an object
 // requires in its constructor to be created.

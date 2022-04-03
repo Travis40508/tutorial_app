@@ -8,6 +8,9 @@ import 'package:tutorial_app/services/jokes_repository.dart';
 
 import '../../mocks.dart';
 
+/// Challenge I - Create your own Golden tests. Being sure to follow the
+/// documentation here - https://pub.dev/packages/golden_toolkit. Be sure to
+/// create your own flutter_test_config.dart file in the test directory.
 void main() {
   late JokesRepository jokesRepository;
   late DeviceBuilder builder;

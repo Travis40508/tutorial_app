@@ -8,6 +8,10 @@ import 'package:tutorial_app/services/jokes_service.dart';
 // saying, "this class will uphold our contract, it will do everything we
 // expect a server that brings us jokes to do."
 
+/// Challenge A - Find an open API on the Internet. It doesn't matter which one,
+/// and make a Flutter app that hits that API and pulls data down and displays
+/// it in any manner.
+
 class ChuckNorrisJokesService implements JokesService {
   final client = Client();
   final baseUrl = 'https://api.chucknorris.io/jokes';

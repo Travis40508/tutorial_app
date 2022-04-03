@@ -3,6 +3,8 @@ import 'package:tutorial_app/main.dart';
 import 'package:tutorial_app/screens/categories/categories_state.dart';
 import 'package:tutorial_app/services/jokes_repository.dart';
 
+/// Challenge D - Create your own Cubit and implementation of the bloc pattern,
+/// making sure to build a widget with a [BlocProvider] in your own widget.
 class CategoriesCubit extends Cubit<CategoriesState> {
   // Now, thanks to our serviceLocator setup in main.dart, this will fetch
   // the JokesRepositoryImpl without even knowing it. It just knows it received

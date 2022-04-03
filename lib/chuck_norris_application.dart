@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tutorial_app/screens/categories/categories_screen.dart';
 import 'package:tutorial_app/screens/jokes/jokes_screen.dart';
 
-class ChuckNorrisApplication extends StatelessWidget {
+class ChuckNorrisApplication extends StatefulWidget {
   final Widget? home;
 
   // visibleForTesting means this can only be accessed in a test file, since
@@ -15,8 +16,26 @@ class ChuckNorrisApplication extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<ChuckNorrisApplication> createState() => _ChuckNorrisApplicationState();
+}
+
+class _ChuckNorrisApplicationState extends State<ChuckNorrisApplication> {
+  // Locks the device orientation so that rotate doesn't change the UI.
+  // This is the reason this class is a stateful widget, we needed to set this
+  // rule before build was called, which required initState, and a stateful
+  // widget.
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      /// Challenge G - Create your own theme! It's fun.
       theme: ThemeData(
         primaryColor: Colors.green,
         primarySwatch: Colors.green,
@@ -40,8 +59,8 @@ class ChuckNorrisApplication extends StatelessWidget {
       // The first screen our app will launch to.
       // If home isn't null, since we know it's only for testing we should just
       // go there, instead.
-      initialRoute: home != null ? null : '/categories',
-      home: home,
+      initialRoute: widget.home != null ? null : '/categories',
+      home: widget.home,
     );
   }
 }

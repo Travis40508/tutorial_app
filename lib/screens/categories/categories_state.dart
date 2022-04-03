@@ -1,5 +1,9 @@
 import 'package:equatable/equatable.dart';
 
+/// Challenge H - Create your own objects, make them extend [Equatable], fill
+/// in their props, and then make 2 instances of that object and print if they
+/// are equal to one another, both with them extending [Equatable], and not.
+
 // This is abstract because it isn't concrete. We just want all other
 // states to know that they're SOME form of CategoriesState.
 // Equatable is a library that changes how we view equality. For example, if

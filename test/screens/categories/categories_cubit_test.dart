@@ -8,6 +8,8 @@ import 'package:tutorial_app/services/jokes_repository.dart';
 
 import '../../mocks.dart';
 
+/// Challenge E - Write your own unit tests. Both with the [blocTest] library,
+/// and with what comes right out of the box in Flutter/Dart.
 void main() {
   late JokesRepository jokesRepository;
 
