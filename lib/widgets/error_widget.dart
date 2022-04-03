@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Moving this into its own widget, since it's used in multiple places.
 class ErrorLoadingWidget extends StatelessWidget {
   final VoidCallback onPressed;
   final String errorMessage;

@@ -15,6 +15,7 @@ void main() {
   late JokesRepository jokesRepository;
   late DeviceBuilder builder;
 
+  // setUp is called before every test executes.
   setUp(() {
     builder = DeviceBuilder()
       ..overrideDevicesForAllScenarios(devices: [
@@ -26,6 +27,7 @@ void main() {
     serviceLocator.registerSingleton<JokesRepository>(jokesRepository);
   });
 
+  // tearDown is called after every test executes.
   tearDown(() {
     serviceLocator.reset();
   });

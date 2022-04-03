@@ -37,8 +37,8 @@ class _ChuckNorrisApplicationState extends State<ChuckNorrisApplication> {
     return MaterialApp(
       /// Challenge G - Create your own theme! It's fun.
       theme: ThemeData(
-        primaryColor: Colors.green,
-        primarySwatch: Colors.green,
+        primaryColor: Colors.blueAccent,
+        primarySwatch: Colors.blue,
         backgroundColor: Colors.white,
         textTheme: const TextTheme(
           headline4: TextStyle(
