@@ -15,8 +15,7 @@ class JokesRepositoryImpl implements JokesRepository {
   }
 
   @override
-  Future<Joke> fetchJokeByCategory({required String category}) {
-    // TODO: implement fetchJokeByCategory
-    throw UnimplementedError();
+  Future<Joke> fetchJokeByCategory({required String category}) async {
+    return await jokesService.fetchJokeByCategory(category: category);
   }
 }

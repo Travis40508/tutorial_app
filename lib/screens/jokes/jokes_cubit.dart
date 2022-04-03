@@ -13,32 +13,28 @@ class JokesCubit extends Cubit<JokesState> {
   }
 
   void fetchJokeByCategory() async {
+    final jokes = <Joke>[];
+    final currentState = state;
+    // This way we keep the jokes we've got going on currently on the screen.
+    if (currentState is JokesLoadedState) {
+      jokes.addAll(currentState.jokes);
+    }
+
     emit(JokesLoadingState());
 
     try {
       final joke =
           await jokesRepository.fetchJokeByCategory(category: category);
-      _addJoke(joke: joke);
+      jokes.add(joke);
+
+      emit(
+        JokesLoadedState(
+          jokes: jokes,
+          category: category,
+        ),
+      );
     } catch (e) {
       emit(JokesErrorState());
     }
-  }
-
-  void _addJoke({required Joke joke}) {
-    final jokes = <Joke>[];
-    final currentState = state;
-
-    // This way we keep the jokes we've got going on currently on the screen.
-    if (currentState is JokesLoadedState) {
-      jokes.addAll(currentState.jokes);
-    }
-    jokes.add(joke);
-
-    emit(
-      JokesLoadedState(
-        jokes: jokes,
-        category: category,
-      ),
-    );
   }
 }

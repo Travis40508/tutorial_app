@@ -24,7 +24,7 @@ void main() {
   });
 
   tearDown(() {
-    serviceLocator.reset();
+    serviceLocator.reset(dispose: true);
   });
 
   testGoldens('Should show categories on server success', (tester) async {

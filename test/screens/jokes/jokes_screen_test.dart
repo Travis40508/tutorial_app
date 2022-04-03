@@ -26,7 +26,7 @@ void main() {
   });
 
   tearDown(() {
-    serviceLocator.reset();
+    serviceLocator.reset(dispose: true);
   });
 
   testGoldens('Should show joke on server success', (tester) async {

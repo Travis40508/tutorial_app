@@ -38,30 +38,46 @@ class JokesScreen extends StatelessWidget {
                   state.category,
                   style: theme.textTheme.headline4,
                 ),
+                actions: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      onPressed: context.read<JokesCubit>().fetchJokeByCategory,
+                      child: Text(
+                        'Another!',
+                        style: theme.textTheme.headline5,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               body: ListView.builder(
                 itemCount: state.jokes.length,
                 itemBuilder: (context, index) {
                   final joke = state.jokes[index];
 
-                  return Card(
-                    elevation: 2.0,
-                    child: ListTile(
-                      // If cubit, which we know we're only using for testing
-                      // is not null, it means that this is coming from a test,
-                      // CachedNetworkImageProvider makes a network call to load
-                      // the image, but you can't make network calls in tests,
-                      // or it will fail. So we just show an empty container
-                      // for the image if we're coming from a golden test.
-                      leading: cubit != null
-                          ? Container(
-                              height: 50.0,
-                              color: theme.primaryColor,
-                            )
-                          : Image(
-                              image: CachedNetworkImageProvider(joke.jokeImage),
-                            ),
-                      title: Text(joke.jokeDescription),
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      elevation: 2.0,
+                      child: ListTile(
+                        // If cubit, which we know we're only using for testing
+                        // is not null, it means that this is coming from a test,
+                        // CachedNetworkImageProvider makes a network call to load
+                        // the image, but you can't make network calls in tests,
+                        // or it will fail. So we just show an empty container
+                        // for the image if we're coming from a golden test.
+                        leading: cubit != null
+                            ? Container(
+                                height: 50.0,
+                                color: theme.primaryColor,
+                              )
+                            : Image(
+                                image:
+                                    CachedNetworkImageProvider(joke.jokeImage),
+                              ),
+                        title: Text(joke.jokeDescription),
+                      ),
                     ),
                   );
                 },

@@ -33,6 +33,15 @@ class ChuckNorrisJokesService implements JokesService {
 
   @override
   Future<Joke> fetchJokeByCategory({required String category}) async {
-    return const Joke(jokeDescription: 'hi', jokeImage: 'hi');
+    // For reference: https://api.chucknorris.io/jokes/random?category=animal
+    final url = '$baseUrl/random?category=$category';
+
+    final response = await client.get(Uri.parse(url));
+    final responseAsJson = jsonDecode(response.body);
+
+    return Joke(
+      jokeDescription: responseAsJson['value'],
+      jokeImage: responseAsJson['icon_url'],
+    );
   }
 }

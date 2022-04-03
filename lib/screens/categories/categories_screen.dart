@@ -35,17 +35,23 @@ class CategoriesScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final category = state.categories[index];
 
-                  return Card(
-                    color: theme.primaryColor,
-                    elevation: 2.0,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        height: 40.0,
-                        child: Center(
-                          child: Text(
-                            category,
-                            style: theme.textTheme.headline5,
+                  return GestureDetector(
+                    onTap: () => Navigator.of(context).pushNamed(
+                      '/jokes',
+                      arguments: category,
+                    ),
+                    child: Card(
+                      color: theme.primaryColor,
+                      elevation: 2.0,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          height: 40.0,
+                          child: Center(
+                            child: Text(
+                              category,
+                              style: theme.textTheme.headline5,
+                            ),
                           ),
                         ),
                       ),
