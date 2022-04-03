@@ -1,5 +1,5 @@
 # tutorial_app
-An app for teaching basic Flutter. This app tasks the dev to take on various challenges to practice their Flutter skills. It should be noted that _EACH_ of these challenges, no matter how seemingly trivial they may be,_MUST_ be created in their own separate project application. If there are 10 challenges, there should be 10 applications. Not 1 application thta does all 10. With programming repetition and practice is key so that the concepts begin to stick.
+An app for teaching basic Flutter. This app tasks the dev to take on various challenges to practice their Flutter skills. It should be noted that _EACH_ of these challenges, no matter how seemingly trivial they may be,_MUST_ be created in their own separate project application. If there are 10 challenges, there should be 10 applications. Not 1 application that does all 10. With programming repetition and practice is key so that the concepts begin to stick. These challenges can and should be completed in the order that's comfortable for the learner, as well; as they were never meant to be completed in order.
 
 ## Getting Started
 For starters, run the application and get used to it, so that you may better understand the code that orders its various functions. Afterwards read the comments that attempt to explain the concepts that are going on and why the code was written the way it was.
