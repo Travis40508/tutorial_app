@@ -70,9 +70,12 @@ class JokesScreen extends StatelessWidget {
                         leading: cubit != null
                             ? Container(
                                 height: 50.0,
+                                width: 50.0,
                                 color: theme.primaryColor,
                               )
                             : Image(
+                                height: 50.0,
+                                width: 50.0,
                                 image:
                                     CachedNetworkImageProvider(joke.jokeImage),
                               ),

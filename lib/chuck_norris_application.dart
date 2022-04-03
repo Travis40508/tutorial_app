@@ -38,7 +38,9 @@ class ChuckNorrisApplication extends StatelessWidget {
         '/jokes': (_) => const JokesScreen(),
       },
       // The first screen our app will launch to.
-      initialRoute: '/categories',
+      // If home isn't null, since we know it's only for testing we should just
+      // go there, instead.
+      initialRoute: home != null ? null : '/categories',
       home: home,
     );
   }
